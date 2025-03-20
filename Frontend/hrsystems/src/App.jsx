@@ -13,7 +13,15 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login/callback" element={<LoginCallback />} />
-          <Route path="/dashboard" element={<SecureRoute element={<Dashboard />} />} />
+          {/* SecureRoute should wrap the component inside an element */}
+          <Route 
+            path="/dashboard" 
+            element={
+              <SecureRoute>
+                <Dashboard />
+              </SecureRoute>
+            } 
+          />
         </Routes>
       </Security>
     </Router>
