@@ -4,16 +4,17 @@ import { Security, SecureRoute } from "@okta/okta-react";
 import Login from "./components/Login/Login";
 import Dashboard from "./components/Dashboard/Dashboard";
 import LoginCallback from "./components/Login/LoginCallback";
-import oktaConfig from "./oktaConfig";
+import oktaAuth from "./oktaConfig"; // Ensure this is an OktaAuth instance
 
 const App = () => {
   return (
     <Router>
-      <Security {...oktaConfig}>
+      <Security oktaAuth={oktaAuth}> {/* Pass the OktaAuth instance explicitly */}
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/login/callback" element={<LoginCallback />} />
-          {/* SecureRoute should wrap the component inside an element */}
+          
+          {/* Protecting /dashboard route */}
           <Route 
             path="/dashboard" 
             element={
