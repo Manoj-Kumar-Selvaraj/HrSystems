@@ -1,59 +1,75 @@
-.Login {
-    width: 100%;
-    padding-top:600px;
-    max-width: 600px;
-    margin: 0 auto; /* Centers the login box horizontally */
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+body {
+    background: linear-gradient(to right, #4A90E2, #50E3C2);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
-.Login h2 {
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.login-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
     text-align: center;
-    margin-bottom: 20px;
-    color: #333; /* Darker color for better contrast */
-}
-
-.Login input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.Login button {
-    width: 100%;
-    padding: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.Login button:hover {
-    background-color: #555; /* Changes color when hovered */
-}
-
-.logo {
-    margin: 0 auto;
-    width: 100%;
-    border: 1px solid #555;
-    border-radius: 5px;
-    max-width: 640px;
-    background-color:#555;
-    text-align: center;
-    margin-bottom: 20px;
 }
 
 .logo img {
-    text-align: center;
-    width: 150px;
+    width: 80px;
     height: auto;
-    display: inline-block;
-    padding: 10px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.input-field:focus {
+    border-color: #4A90E2;
+    box-shadow: 0px 0px 8px rgba(74, 144, 226, 0.3);
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.login-button:hover {
+    background: #357ABD;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
