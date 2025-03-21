@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import OktaAuth from "@okta/okta-auth-js";
-import icon from "./icon.png";
 import "./Login.css";
 
 const oktaAuth = new OktaAuth({
@@ -39,12 +38,12 @@ function Login() {
     <div className="login-container">
       <Helmet>
         <title>Login</title>
-        <link rel="icon" href={icon} />
+        <link rel="icon" href="/icon.png" />
       </Helmet>
 
       <div className="login-card">
         <div className="logo">
-          <img src={icon} alt="Company Logo" />
+          <img src="/icon.png" alt="Company Logo" />
         </div>
         <h2>Login</h2>
         {error && <p className="error-message">{error}</p>}
