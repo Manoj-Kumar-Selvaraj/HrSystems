@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import OktaAuth from "@okta/okta-auth-js";
-import icon from "./login.jpg";
+import icon from "/logo.png";  // Absolute path from public/
 import "./Login.css";
 
 // Okta Authentication Configuration
