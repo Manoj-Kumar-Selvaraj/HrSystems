@@ -1,17 +1,10 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
-import OktaAuth from "@okta/okta-auth-js";
+import oktaAuth from "../../oktaConfig"; // ✅ Import Okta config
+import icon from "./login.jpg";
 import "./Login.css";
 
-const oktaAuth = new OktaAuth({
-  issuer: "https://okta.manoj-techworks.site/oauth2/default",
-  clientId: "0oanwc9h6wnB5YrOo5d7",
-  redirectUri: "https://okta.manoj-techworks.site/login/callback",
-  scopes: ["openid", "profile", "email"],
-  pkce: true,
-});
-
-function Login() {
+function Login({ onLoginSuccess }) {
   const [eid, setEid] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -19,13 +12,20 @@ function Login() {
   const handleLogin = async () => {
     setError(null);
     try {
+      // ✅ Authenticate using Okta API
       const transaction = await oktaAuth.signInWithCredentials({
         username: eid,
         password: password,
       });
 
       if (transaction.status === "SUCCESS") {
-        oktaAuth.signInWithRedirect();
+        // ✅ Redirect-based authentication
+        await oktaAuth.token.getWithRedirect({ sessionToken: transaction.sessionToken });
+
+        // ✅ Call parent function if provided
+        if (onLoginSuccess) {
+          onLoginSuccess(transaction);
+        }
       } else {
         setError("Login failed. Invalid credentials.");
       }
@@ -35,35 +35,32 @@ function Login() {
   };
 
   return (
-    <div className="login-container">
+    <div>
       <Helmet>
         <title>Login</title>
-        <link rel="icon" href="/icon.png" />
+        <link rel="icon" href={icon} />
       </Helmet>
 
-      <div className="login-card">
-        <div className="logo">
-          <img src="/icon.png" alt="Company Logo" />
-        </div>
-        <h2>Login</h2>
-        {error && <p className="error-message">{error}</p>}
+      {/* ✅ Logo Section */}
+      <div className="logo">
+        <img src="/logo.png" alt="Company Logo" />
+      </div>
+
+      <div className="Login">
+        {error && <p style={{ color: "red" }}>{error}</p>}
         <input
           type="text"
           value={eid}
           onChange={(e) => setEid(e.target.value)}
           placeholder="Employee ID"
-          className="input-field"
         />
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
-          className="input-field"
         />
-        <button onClick={handleLogin} className="login-button">
-          Login
-        </button>
+        <button onClick={handleLogin}>Login</button>
       </div>
     </div>
   );
