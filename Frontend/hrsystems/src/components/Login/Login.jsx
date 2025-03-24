@@ -38,7 +38,7 @@ function Login({ onLoginSuccess }) {
     <div>
       <Helmet>
         <title>Login</title>
-        <link rel="icon" href={icon} />
+        <link rel="icon" href="/icon.png" />
       </Helmet>
 
       {/* ✅ Logo Section */}
