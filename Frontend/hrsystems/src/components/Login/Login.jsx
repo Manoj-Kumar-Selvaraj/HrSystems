@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import oktaAuth from "../../oktaConfig"; // ✅ Import Okta config
-import icon from "./login.jpg";
-// import "./Login.css";
+// import icon from "./login.jpg";
+import "./Login.css";
 
 function Login({ onLoginSuccess }) {
   const [eid, setEid] = useState("");
@@ -43,7 +43,7 @@ function Login({ onLoginSuccess }) {
 
       {/* ✅ Logo Section */}
       <div className="logo">
-        <img src="/icon.png" alt="SecOpsDev" />
+        <img src="icon.png" alt="SecOpsDev" />
       </div>
 
       <div className="Login">
