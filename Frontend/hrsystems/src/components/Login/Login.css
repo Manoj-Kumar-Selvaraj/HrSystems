@@ -41,7 +41,7 @@ body.dark-mode {
 
 /* Logo */
 .logo img {
-    width: 140px;
+    width: 100px;
     height: auto;
     margin-bottom: 15px;
     transition: transform 0.3s;
@@ -50,48 +50,79 @@ body.dark-mode {
     transform: scale(1.1);
 }
 
-/* Input Fields */
-.input-field {
-    width: 100%;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 6px;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.2);
+/* Welcome Message */
+h2 {
+    font-size: 22px;
     color: #FFF;
-    transition: 0.3s;
+    margin-bottom: 10px;
 }
 
-.input-field:focus {
-    border-color: #4A90E2;
-    box-shadow: 0px 0px 8px rgba(74, 144, 226, 0.3);
-    outline: none;
+.description {
+    font-size: 14px;
+    color: #EEE;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.about {
+    margin: 15px 0;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+}
+.about h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #FFF;
+}
+.about p {
+    font-size: 14px;
+    color: #DDD;
 }
 
 /* Buttons */
-.login-button {
+.demo-button,
+.walkthrough-button {
     width: 100%;
     padding: 12px;
-    background: linear-gradient(to right, #4A90E2, #50E3C2);
-    color: white;
+    margin: 8px 0;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: transform 0.2s, background 0.3s;
     font-size: 16px;
+    transition: transform 0.2s, background 0.3s;
 }
 
-.login-button:hover {
+.demo-button {
+    background: linear-gradient(to right, #4A90E2, #50E3C2);
+    color: white;
+}
+.demo-button:hover {
     background: linear-gradient(to right, #357ABD, #46CBA8);
     transform: scale(1.05);
 }
 
-/* Error Messages */
-.error-message {
-    color: #FF4C4C;
+.walkthrough-button {
+    background: linear-gradient(to right, #FF8C00, #FF4500);
+    color: white;
+}
+.walkthrough-button:hover {
+    background: linear-gradient(to right, #E07B00, #D13F00);
+    transform: scale(1.05);
+}
+
+/* Walkthrough Section */
+.walkthrough {
+    margin-top: 15px;
+}
+.walkthrough h3 {
+    font-size: 18px;
+    color: #FFF;
+}
+.walkthrough p {
     font-size: 14px;
-    margin-bottom: 10px;
+    color: #DDD;
+    margin-bottom: 8px;
 }
 
 /* Responsive Design */
