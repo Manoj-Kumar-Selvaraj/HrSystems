@@ -43,7 +43,7 @@ function Login({ onLoginSuccess }) {
 
       {/* ✅ Logo Section */}
       <div className="logo">
-        <img src="icon.png" alt="SecOpsDev" />
+        <img src="/icon.png" alt="SecOpsDev" />
       </div>
 
       <div className="Login">
