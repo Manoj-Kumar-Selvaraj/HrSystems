@@ -53,13 +53,13 @@ body.dark-mode {
 /* Welcome Message */
 h2 {
     font-size: 22px;
-    color: #FFF;
+    color: blue;
     margin-bottom: 10px;
 }
 
 .description {
     font-size: 14px;
-    color: #EEE;
+    color: blue;
     margin-bottom: 15px;
 }
 
@@ -73,11 +73,11 @@ h2 {
 .about h3 {
     margin-bottom: 5px;
     font-size: 18px;
-    color: #FFF;
+    color: blue;
 }
 .about p {
     font-size: 14px;
-    color: #DDD;
+    color: blue;
 }
 
 /* Buttons */
@@ -95,7 +95,7 @@ h2 {
 
 .demo-button {
     background: linear-gradient(to right, #4A90E2, #50E3C2);
-    color: white;
+    color: blue;
 }
 .demo-button:hover {
     background: linear-gradient(to right, #357ABD, #46CBA8);
@@ -104,7 +104,7 @@ h2 {
 
 .walkthrough-button {
     background: linear-gradient(to right, #FF8C00, #FF4500);
-    color: white;
+    color: blue;
 }
 .walkthrough-button:hover {
     background: linear-gradient(to right, #E07B00, #D13F00);
@@ -117,11 +117,11 @@ h2 {
 }
 .walkthrough h3 {
     font-size: 18px;
-    color: #FFF;
+    color: blue;
 }
 .walkthrough p {
     font-size: 14px;
-    color: #DDD;
+    color: blue;
     margin-bottom: 8px;
 }
 

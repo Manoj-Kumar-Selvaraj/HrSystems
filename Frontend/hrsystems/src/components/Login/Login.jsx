@@ -25,18 +25,17 @@ function Login() {
 
         {/* Welcome Message */}
         <h2>Welcome to SecOpsDev</h2>
-        <p className="description">Explore our secure solutions with a guided walkthrough.</p>
 
         {/* About Section */}
         <div className="about">
           <h3>About Us</h3>
-          <p>SecOpsDev provides top-tier security and operational development solutions. Our platform ensures seamless integration and robust security measures tailored to your needs.</p>
+          <p>SecOpsDev provides software development solutions with top-tier security and operational efficiency. Our platform ensures seamless integration and robust security measures tailored to your needs.</p>
         </div>
 
-        {/* Try Demo Button */}
-        <button className="demo-button" onClick={() => alert("Launching demo...")}>Try Demo</button>
+        {/* Login Button */}
+        <button className="login-button" onClick={handleLogin}>Login</button>
 
-        {/* Interactive Walkthrough (Placeholder) */}
+        {/* Interactive Walkthrough */}
         <div className="walkthrough">
           <h3>How It Works</h3>
           <p>Discover key features through our interactive guide.</p>
