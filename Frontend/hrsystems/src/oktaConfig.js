@@ -8,22 +8,10 @@ const oktaAuth = new OktaAuth({
   scopes: ["openid", "profile", "email"],
   pkce: true, 
   tokenManager: {
-    autoRenew: true,  // ✅ Automatically renew tokens
-    secure: true,     // ✅ Secure storage
-    storage: "sessionStorage", // ✅ Secure token storage
+    autoRenew: true,
+    secure: true,
+    storage: "sessionStorage",
   }
 });
-
-// ✅ Token refresh every 30 seconds (only if expired)
-setInterval(async () => {
-  try {
-    const accessToken = await oktaAuth.tokenManager.get("accessToken");
-    if (!accessToken || accessToken.expiresAt * 1000 < Date.now()) {
-      await oktaAuth.token.getWithoutPrompt();
-    }
-  } catch (err) {
-    console.error("Token refresh failed:", err);
-  }
-}, 30000); // Every 30 seconds
 
 export default oktaAuth;
