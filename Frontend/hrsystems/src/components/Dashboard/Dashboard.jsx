@@ -12,7 +12,7 @@ const Dashboard = () => {
   const { oktaAuth, authState } = useOktaAuth();
 
   const logout = async () => {
-    oktaAuth.signOut();
+    await oktaAuth.signOut();
   };
 
   if (!authState?.isAuthenticated) {
@@ -21,7 +21,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* Sidebar Navigation */}
       <nav className="sidebar">
         <h2>HR System</h2>
         <ul>
@@ -35,7 +34,6 @@ const Dashboard = () => {
         <button className="logout-button" onClick={logout}>Logout</button>
       </nav>
 
-      {/* Main Content */}
       <div className="dashboard-content">
         <Routes>
           <Route path="employees" element={<EmployeeManagement />} />

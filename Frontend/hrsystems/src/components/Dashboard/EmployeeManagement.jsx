@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useOktaAuth } from "@okta/okta-react";
-import { fetchEmployees, createEmployee, updateEmployee, deleteEmployee } from "./api";
+import { fetchEmployees, createEmployee, deleteEmployee } from "./api";
 
 const EmployeeManagement = () => {
   const { authState } = useOktaAuth();
@@ -21,22 +21,20 @@ const EmployeeManagement = () => {
       return;
     }
     const response = await createEmployee(authState.accessToken.accessToken, newEmployee);
-    setEmployees([...employees, newEmployee]);
+    setEmployees([...employees, response]); // Assuming API returns the created employee
     setNewEmployee({ name: "", position: "", salary: "" });
-    alert(response.message);
+    alert(response.message || "Employee added successfully");
   };
 
   const handleDeleteEmployee = async (employeeId) => {
     const response = await deleteEmployee(authState.accessToken.accessToken, employeeId);
     setEmployees(employees.filter(emp => emp.id !== employeeId));
-    alert(response.message);
+    alert(response.message || "Employee deleted successfully");
   };
 
   return (
     <div>
       <h2>Employee Management</h2>
-      
-      {/* Add Employee Form */}
       <div>
         <input type="text" placeholder="Name" value={newEmployee.name} onChange={(e) => setNewEmployee({ ...newEmployee, name: e.target.value })} />
         <input type="text" placeholder="Position" value={newEmployee.position} onChange={(e) => setNewEmployee({ ...newEmployee, position: e.target.value })} />
@@ -44,12 +42,11 @@ const EmployeeManagement = () => {
         <button onClick={handleAddEmployee}>Add Employee</button>
       </div>
 
-      {/* Employee List */}
       {employees.length > 0 ? (
         <ul>
           {employees.map((emp) => (
             <li key={emp.id}>
-              {emp.name} - {emp.position} - ${emp.salary} 
+              {emp.name} - {emp.position} - ${emp.salary}
               <button onClick={() => handleDeleteEmployee(emp.id)}>Delete</button>
             </li>
           ))}
