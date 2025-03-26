@@ -38,12 +38,12 @@ const Dashboard = () => {
       {/* Main Content */}
       <div className="dashboard-content">
         <Routes>
-          <Route path="/dashboard/employees" element={<EmployeeManagement />} />
-          <Route path="/dashboard/attendance" element={<Attendance />} />
-          <Route path="/dashboard/payroll" element={<Payroll />} />
-          <Route path="/dashboard/performance" element={<Performance />} />
-          <Route path="/dashboard/recruitment" element={<Recruitment />} />
-          <Route path="/dashboard/documents" element={<Documents />} />
+          <Route path="employees" element={<EmployeeManagement />} />
+          <Route path="attendance" element={<Attendance />} />
+          <Route path="payroll" element={<Payroll />} />
+          <Route path="performance" element={<Performance />} />
+          <Route path="recruitment" element={<Recruitment />} />
+          <Route path="documents" element={<Documents />} />
           <Route path="/" element={<h2>Select a section from the sidebar</h2>} />
         </Routes>
       </div>
